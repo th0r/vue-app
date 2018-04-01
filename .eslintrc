@@ -1,7 +1,30 @@
 {
   "root": true,
   "extends": [
-    "plugin:vue/essential",
-    "eslint:recommended"
-  ]
+    "plugin:vue/recommended",
+    "th0r"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "rules": {
+    "indent": 0,
+    "vue/script-indent": ["error", 2, {
+      "baseIndent": 1,
+      "SwitchCase": 1,
+      // To be able to write multiline string without spaces in the beginning
+      "ignoredNodes": ["TemplateLiteral"]
+    }],
+    "vue/max-attributes-per-line": 0,
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "always"
+      },
+      "svg": "always",
+      "math": "always"
+    }]
+  }
 }
