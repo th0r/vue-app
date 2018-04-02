@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import _ from 'lodash';
+  import {cloneDeep} from 'lodash-es';
   import UsersList from '../components/UsersList';
   import {UsersStore} from '../stores/UsersStore';
   import {User as UserMobx} from '../models/UserMobx';
@@ -49,7 +49,7 @@
     methods: {
       generateUsers() {
         const userFactory = this.type === 'mobx' ? this.mobxUserFactory : this.vueUserFactory;
-        const usersData = _.cloneDeep(this.usersData);
+        const usersData = cloneDeep(this.usersData);
         const startTime = Date.now();
         const users = new UsersStore(userFactory, usersData);
         const endTime = Date.now();

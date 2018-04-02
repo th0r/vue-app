@@ -14,7 +14,7 @@
     "bootstrap-vue": "2.0.0-rc.6",
     "faker": "4.1.0",
     "jquery": "3.3.1",
-    "lodash": "4.17.5",
+    "lodash-es": "4.17.8",
     "vue": "2.5.16",
     "vue-model-x": "0.1.0",
     "vue-router": "3.0.1"
@@ -35,7 +35,8 @@
     "eslint-config-th0r": "1.0.1",
     "node-sass": "^4.8.3",
     "sass-loader": "^6.0.7",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.16",
+    "webpack-bundle-analyzer": "2.11.1"
   },
   "browserslist": [
     "> 1%",

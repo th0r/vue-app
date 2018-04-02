@@ -1,10 +1,9 @@
-import 'babel-polyfill';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
 import BootstrapVue from 'bootstrap-vue';
-import faker from 'faker';
-import _ from 'lodash';
+import faker from 'faker/locale/en';
+import {shuffle} from 'lodash-es';
 
 Vue.config.productionTip = false;
 
@@ -19,7 +18,7 @@ for (let i = 0; i < count; i++) {
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     age: faker.random.number({max: 90}),
-    permissions: _.shuffle(permissions)
+    permissions: shuffle(permissions)
       .slice(0, faker.random.number({max: 2}))
   });
 }

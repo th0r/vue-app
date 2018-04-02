@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import _ from 'lodash';
+  import {escape, escapeRegExp} from 'lodash-es';
 
   export default {
     name: 'Highlight',
@@ -25,19 +25,19 @@
         const {text, q} = this;
         let html;
 
-        const re = (q instanceof RegExp) ? q : new RegExp(`(?:${_.escapeRegExp(q)})+`, 'i');
+        const re = (q instanceof RegExp) ? q : new RegExp(`(?:${escapeRegExp(q)})+`, 'i');
         const match = re.exec(text);
         if (match) {
           html = (
             // tslint:disable-next-line: prefer-template
-            _.escape(text.slice(0, match.index)) +
-            `<span class="highlight">${_.escape(match[0])}</span>` +
-            _.escape(text.slice(match.index + match[0].length))
+            escape(text.slice(0, match.index)) +
+            `<span class="highlight">${escape(match[0])}</span>` +
+            escape(text.slice(match.index + match[0].length))
           );
         }
 
         if (!html) {
-          html = _.escape(text);
+          html = escape(text);
         }
 
         return html;
