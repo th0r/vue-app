@@ -23,8 +23,6 @@
   import Highlight from './Highlight';
 
   export default {
-    name: 'User',
-
     components: {
       Highlight
     },

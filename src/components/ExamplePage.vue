@@ -26,7 +26,6 @@
   import {User as UserVue} from '../models/UserVue';
 
   export default {
-    name: 'ExamplePage',
     components: {
       UsersList
     },

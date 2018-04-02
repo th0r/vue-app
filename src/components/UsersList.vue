@@ -35,8 +35,6 @@
   import {UsersStore} from '../stores/UsersStore';
 
   export default {
-    name: 'UsersList',
-
     components: {
       User
     },

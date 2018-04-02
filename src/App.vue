@@ -16,7 +16,6 @@
   import bContainer from 'bootstrap-vue/es/components/layout/container';
 
   export default {
-    name: 'App',
     components: {
       bNav,
       bNavItem,

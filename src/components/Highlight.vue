@@ -9,7 +9,6 @@
   import {escape, escapeRegExp} from 'lodash-es';
 
   export default {
-    name: 'Highlight',
     props: {
       text: {
         type: String,
