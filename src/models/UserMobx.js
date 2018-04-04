@@ -1,14 +1,15 @@
 import {observable, computed, VueModel} from 'vue-model-x';
 
 export class User extends VueModel {
-  @observable id = null;
+  @observable id;
   @observable firstName = '';
   @observable lastName = '';
   @observable age = 0;
   @observable permissions = [];
 
   constructor(data) {
-    super(data);
+    super();
+    this.update(data);
   }
 
   @computed get fullName() {

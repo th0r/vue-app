@@ -16,7 +16,7 @@
     "jquery": "3.3.1",
     "lodash-es": "4.17.8",
     "vue": "2.5.16",
-    "vue-model-x": "0.1.2",
+    "vue-model-x": "0.2.1",
     "vue-router": "3.0.1"
   },
   "devDependencies": {
