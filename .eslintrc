@@ -17,6 +17,8 @@
       "ignoredNodes": ["TemplateLiteral"]
     }],
     "vue/max-attributes-per-line": 0,
+    // Doesn't work with `vue-types` module
+    "vue/require-default-prop": 0,
     "vue/html-self-closing": ["error", {
       "html": {
         "void": "never",

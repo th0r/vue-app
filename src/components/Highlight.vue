@@ -1,23 +1,11 @@
-<template>
-  <span>
-    <span v-if="q" v-html="html"></span>
-    <template v-else>{{ text }}</template>
-  </span>
-</template>
-
 <script>
+  import t from 'vue-types';
   import {escape, escapeRegExp} from 'lodash-es';
 
   export default {
     props: {
-      text: {
-        type: String,
-        required: true
-      },
-      q: {
-        type: String,
-        required: true
-      }
+      text: t.string.isRequired,
+      q: t.string
     },
     computed: {
       html() {
@@ -28,7 +16,6 @@
         const match = re.exec(text);
         if (match) {
           html = (
-            // tslint:disable-next-line: prefer-template
             escape(text.slice(0, match.index)) +
             `<span class="highlight">${escape(match[0])}</span>` +
             escape(text.slice(match.index + match[0].length))
@@ -40,6 +27,14 @@
         }
 
         return html;
+      }
+    },
+
+    render() {
+      if (this.q) {
+        return <span domPropsInnerHTML={this.html}/>;
+      } else {
+        return <span>{this.text}</span>;
       }
     }
   };

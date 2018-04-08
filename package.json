@@ -17,7 +17,8 @@
     "lodash-es": "4.17.8",
     "vue": "2.5.16",
     "vue-model-x": "0.2.1",
-    "vue-router": "3.0.1"
+    "vue-router": "3.0.1",
+    "vue-types": "1.2.2"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.44",

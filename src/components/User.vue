@@ -17,6 +17,7 @@
 </template>
 
 <script>
+  import t from 'vue-types';
   import {User as UserMobx} from '../models/UserMobx';
   import {User as UserVue} from '../models/UserVue';
   import {AdminUser} from '../models/AdminUserMobx';
@@ -28,19 +29,9 @@
     },
 
     props: {
-      user: {
-        type: Object,
-        required: true,
-        validator: user => user instanceof UserMobx || user instanceof UserVue
-      },
-      active: {
-        type: Boolean,
-        default: false
-      },
-      highlight: {
-        type: String,
-        default: ''
-      }
+      user: t.oneOfType([t.instanceOf(UserMobx), t.instanceOf(UserVue)]).isRequired,
+      active: t.bool.def(false),
+      highlight: t.string
     },
 
     data() {

@@ -31,6 +31,7 @@
 </template>
 
 <script>
+  import t from 'vue-types';
   import User from '../components/User';
   import {UsersStore} from '../stores/UsersStore';
 
@@ -40,10 +41,7 @@
     },
 
     props: {
-      users: {
-        type: UsersStore,
-        required: true
-      }
+      users: t.instanceOf(UsersStore).isRequired
     },
 
     computed: {
